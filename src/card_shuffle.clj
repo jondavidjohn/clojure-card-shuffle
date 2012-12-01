@@ -5,8 +5,8 @@
   (partition-by (fn [i] (= 0 (rand-int 2))) coll))
 
 (defn riffle
-  ([cards] (riffle cards 1))
-  ([cards times]
+  ([cards times] (nth (iterate riffle cards) times))
+  ([cards]
     (let [card-count (count cards)
           marg (if (> card-count 20) (int (* 0.1 card-count)) 2)
           middleish (+ (int (/ card-count 2)) (rand-nth (range (- marg) marg)))
@@ -17,26 +17,21 @@
 
 
 (defn overhand
-  ([cards] (overhand cards 1))
-  ([cards times]
-    (let [shuffled-deck (->> cards
-            partition-by-rand
-            reverse
-            flatten)]
-      (if (> times 1)
-        (recur shuffled-deck (dec times))
-        shuffled-deck))))
+  ([cards times] (nth (iterate overhand cards) times))
+  ([cards]
+    (->> cards
+         partition-by-rand
+         reverse
+         flatten)))
 
 (defn mongean
-  ([cards] (mongean cards 1))
-  ([cards times]
+  ([cards times] (nth (iterate mongean cards) times))
+  ([cards]
     (let [vec-cards (vec cards)
           num-cards (count vec-cards)
           final-order (concat (reverse (range 1 num-cards 2))
                               (range 0 num-cards 2))]
-      (if (> times 1)
-        (recur (replace vec-cards final-order) (dec times))
-        (seq (replace vec-cards final-order))))))
+      (seq (replace vec-cards final-order)))))
 
 (defn pile
   ([cards] (pile cards 3 1))
