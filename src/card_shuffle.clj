@@ -9,7 +9,7 @@
   ([cards times]
     (let [card-count (count cards)
           marg (if (> card-count 20) (int (* 0.1 card-count)) 2)
-          middleish (+ (int (/ card_count 2)) (rand-nth (range (- marg) marg)))
+          middleish (+ (int (/ card-count 2)) (rand-nth (range (- marg) marg)))
           [deck1 deck2] (split-at middleish cards)
           deck1 (partition-by-rand deck1)
           deck2 (partition-by-rand deck2)]
