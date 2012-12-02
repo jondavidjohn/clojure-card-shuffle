@@ -1,17 +1,55 @@
-# clojure-shuffle
+# Clojure Card Shuffle
 
-A few card shuffling algorithims implemented in clojure
+A simple clojure module that is meant to simulate the action of shuffling
+a collection as if it were a deck of cards.
 
-## Usage
+## Types
 
-Not sure yet.
+All shuffle types support an optional second parameter to perform the shuffle multiple times.
 
-## License - MIT
+### Riffle - http://en.wikipedia.org/wiki/Shuffling#Riffle
 
-Copyright (C) 2012 Jonathan D. Johnson
+  Predictable behaviours that make a human riffle shuffle imperfect
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+  - Once a deck of cards is divided to each hand, the amount of cards in each hand is not (likely) equal.
+  - As each thumb releases from it's half of the deck, sometimes more than one card drops from a single hand at a time.
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+```clojure
+(riffle coll times)
+```
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+### Overhand - http://en.wikipedia.org/wiki/Shuffling#Stripping_or_overhand
+
+  Predictable behaviours that make a human overhand shuffle imperfect
+
+  - Random amounts of cards (chunks) are taken from the top and placed placed in the opposite hand in reverse order (retaining the order within each chunk)
+
+```clojure
+(overhand coll times)
+```
+
+### Mongean - http://en.wikipedia.org/wiki/Shuffling#Mongean_shuffle
+
+  A very predictable shuffle, alternating placing the top card on the bottom/top of the new deck
+
+__unit tests included__
+
+```clojure
+(mongean coll times)
+```
+
+### Pile - http://en.wikipedia.org/wiki/Shuffling#Pile_shuffle
+
+  Predictable shuffle, dealing items into N piles and then rejoining the piles
+
+__unit tests included__
+
+```clojure
+; `piles` is how many piles to use
+(pile coll piles times)
+```
+
+
+## Installation
+
+**Available via clojars.org**
