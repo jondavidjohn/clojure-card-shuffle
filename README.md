@@ -50,6 +50,6 @@ __unit tests included__
 ```
 
 
-## Installation
+## Usage
 
-**Available via clojars.org**
+[**Available via clojars.org**](https://clojars.org/card-shuffle)
