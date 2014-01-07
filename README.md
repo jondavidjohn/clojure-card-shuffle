@@ -53,3 +53,17 @@ __unit tests included__
 ## Usage
 
 [**Available via clojars.org**](https://clojars.org/card-shuffle)
+
+## Development
+
+This project usees [leinigen](http://leiningen.org/) for development, you can install
+it via hombrew with
+
+    brew install leiningen
+
+Once you have leiningen installed
+
+    git clone git@github.com:jondavidjohn/clojure-card-shuffle.git
+    cd clojure-card-shuffle
+    lein install
+    lein test
