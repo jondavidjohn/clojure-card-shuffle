@@ -1,5 +1,7 @@
 # Clojure Card Shuffle
 
+[![Build Status](https://travis-ci.org/jondavidjohn/clojure-card-shuffle.png?branch=master,develop)](https://travis-ci.org/jondavidjohn/clojure-card-shuffle)
+
 A simple clojure module that is meant to simulate the action of shuffling
 a collection as if it were a deck of cards.
 
@@ -56,12 +58,12 @@ __unit tests included__
 
 ## Development
 
-This project usees [leinigen](http://leiningen.org/) for development, you can install
+This project usees [leinigen](http://leiningen.org/) 2.x for development, you can install
 it via hombrew with
 
     brew install leiningen
 
-Once you have leiningen installed
+Once you have leiningen 2 installed
 
     git clone git@github.com:jondavidjohn/clojure-card-shuffle.git
     cd clojure-card-shuffle
