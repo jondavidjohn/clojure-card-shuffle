@@ -1,4 +1,4 @@
-(defproject card-shuffle "0.1"
+(defproject card-shuffle "0.2.0"
   :url "https://github.com/jondavidjohn/clojure-card-shuffle"
   :description "Clojure implementation of many humanoid card shuffling techniques"
   :license {:name "MIT License"
