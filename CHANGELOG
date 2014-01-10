@@ -1,0 +1,5 @@
+* 0.2.0
+  - Fix riffle to return all input cards consistently (added tests)
+
+* 0.1
+  - Initial Release
